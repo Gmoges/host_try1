@@ -74,7 +74,7 @@ app.post("/add-product", (req, res) => {
       const PId = result[0].id;
 
 
-      res.redirect("/result/index.html");
+      res.redirect("https://gmoges.github.io/host_try1/back_front/result/index.html");
     });
   });
 });
