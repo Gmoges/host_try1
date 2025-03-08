@@ -6,6 +6,9 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); // Also handle JSON requests
 
+
+app.use(express.static(__dirname)); 
+
 // MySQL Connection
 const connection = mysql.createConnection({
   host: "localhost",
@@ -69,7 +72,9 @@ app.post("/add-product", (req, res) => {
       }
 
       const PId = result[0].id;
-      res.send(`User registered with ID: ${PId}`);
+
+
+      res.redirect("/result/index.html");
     });
   });
 });
